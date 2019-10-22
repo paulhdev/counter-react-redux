@@ -18,13 +18,13 @@ const Counter = ({ count, increment, decrement, clean }) => {
         Contador: <strong>{count}</strong>
       </h2>
       <div className="mt-2 mb-2">
-        <Button className="m-2" color="primary" onClick={increment}>
+        <Button className="m-2" color="primary" onClick={() => increment(1)}>
           <MdAddCircleOutline size={24} color="white" />
         </Button>
-        <Button className="m-2" color="secondary" onClick={decrement}>
+        <Button className="m-2" color="secondary" onClick={() => decrement(1)}>
           <MdRemoveCircleOutline size={24} color="white" />
         </Button>
-        <Button className="m-2" color="danger" onClick={clean}>
+        <Button className="m-2" color="danger" onClick={() => clean(0)}>
           <MdDelete size={24} color="white" />
         </Button>
       </div>
@@ -40,9 +40,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    increment: () => dispatch(increment),
-    decrement: () => dispatch(decrement),
-    clean: () => dispatch(clean)
+    increment: (value) => dispatch(increment(value)),
+    decrement: (value) => dispatch(decrement(value)),
+    clean: (value) => dispatch(clean(value))
   };
 };
 

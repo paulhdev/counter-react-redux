@@ -1,11 +1,20 @@
-export const increment = {
-  type: "INCREMENT"
+export const increment = (value) => {
+  return {
+    type: "INCREMENT",
+    value,
+  }
 };
 
-export const decrement = {
-  type: "DECREMENT"
+export const decrement = (value) => {
+  return {
+    type: "DECREMENT",
+    value,
+  }
 };
 
-export const clean = {
-  type: "CLEAN"
+export const clean = (value) => {
+  return {
+    type: "CLEAN",
+    value,
+  }
 };
